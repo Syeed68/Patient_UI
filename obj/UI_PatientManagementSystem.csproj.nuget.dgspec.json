@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\UI_PatientManagementSystem.csproj": {}
+    "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\Patient_UI\\UI_PatientManagementSystem.csproj": {}
   },
   "projects": {
-    "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\UI_PatientManagementSystem.csproj": {
+    "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\Patient_UI\\UI_PatientManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\UI_PatientManagementSystem.csproj",
+        "projectUniqueName": "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\Patient_UI\\UI_PatientManagementSystem.csproj",
         "projectName": "UI_PatientManagementSystem",
-        "projectPath": "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\UI_PatientManagementSystem.csproj",
+        "projectPath": "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\Patient_UI\\UI_PatientManagementSystem.csproj",
         "packagesPath": "C:\\Users\\Syeed\\.nuget\\packages\\",
-        "outputPath": "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\obj\\",
+        "outputPath": "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\Patient_UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Syeed\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4,6 +4,8 @@
 }
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet" />
+
 <div class="row">
     <div class="offset-2 col-9">
         <div class="card">
@@ -11,7 +13,7 @@
                 Patient Information
             </div>
             <div class="card-body">
-                <form id="meetingMinuteMaster">
+                <form id="patientForm">
                     <div class="col-12">
                         <div class="form-group row">
                             <label for="name" class="col-sm-3">Patient Name<span class="text-danger">*</span></label>
@@ -82,15 +84,18 @@
             <div class="row">
                 <div class="col-2">
                     <button type="button" id="btnSave" class="btn btn-success float-left btn-sm">Save</button>
-                    <button type="button" id="btnRefresh" class="btn btn-light float-left btn-sm">Refresh</button>
                 </div>
             </div>
+
+          
+
         </div>
     </div>
 </div>
 @section Scripts {
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
         var apiUrl = "http://localhost:37114/api";
@@ -194,16 +199,32 @@
         });
 
         $(document).on("click", "#btnSave", function () {
-            if($("#meetingMinuteMaster").valid()){
+            if ($("#patientForm").valid()) {
                 let patientInformation = {
                     name:"",
                     diseaseId: "",
-                    epilepsy: ""
+                    epilepsy: "",
+                    NCD_Details: "",
+                    Allergy_Details: ""
                 }
                 patientInformation.name = $("#name").val();
                 patientInformation.diseaseId = +$("#Diseases").val();
                 patientInformation.epilepsy = $("#Epilepsy").val();
 
+                var NCD_Details = [];
+                $("#lstNCD2 option").each(function (key, val) {
+                    let NDCId = val.value;
+                    NCD_Details.push({ NDCId: NDCId });
+                });
+                patientInformation.NCD_Details = NCD_Details;
+
+                var Allergy_Details = [];
+                $("#lstAllergies2 option").each(function (key, val) {
+                    let AllergyId = val.value;
+                    Allergy_Details.push({ AllergyId: AllergyId })
+                });
+                patientInformation.Allergy_Details = Allergy_Details;
+                $("#btnSave").prop("disabled", true);
                 $.ajax({
                     headers: {
                         'Accept': 'application/json',
@@ -214,11 +235,32 @@
                     data: JSON.stringify(patientInformation),
                     type: "post",
                     success: function (res) {
+                        $("#btnSave").prop("disabled", false);
+                        if (res.type === "Success") {
+                            toastr.success(res.message, res.type);
+                            $("#meetingMinuteMaster").trigger("reset");
+                        }
+                        else {
+                            toastr.error(res.message, res.type);
+                        }
 
                     }
                 });
             }
         });
 
+        $("#patientForm").validate({
+            rules: {
+                name: { required: true },
+                Diseases: { required: true },
+                Epilepsy: { required: true }
+            },
+            messages: {
+                name: 'Name is required',
+                Diseases: 'Diseases name is required',
+                Epilepsy: 'Epilepsy is required'
+            }
+        });
+        
     </script>
 }

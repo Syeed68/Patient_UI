@@ -17,43 +17,43 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = UI_PatientManagementSystem
 build_property.RootNamespace = UI_PatientManagementSystem
-build_property.ProjectDir = G:\New folder (3)\Patient_UI\UI_PatientManagementSystem\
+build_property.ProjectDir = G:\New folder (3)\Patient_UI\UI_PatientManagementSystem\Patient_UI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = G:\New folder (3)\Patient_UI\UI_PatientManagementSystem
+build_property.MSBuildProjectDirectory = G:\New folder (3)\Patient_UI\UI_PatientManagementSystem\Patient_UI
 build_property._RazorSourceGeneratorDebug = 
 
-[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Views/Home/Index.cshtml]
+[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Patient_UI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Views/Home/Privacy.cshtml]
+[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Patient_UI/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Views/Patient/Index.cshtml]
+[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Patient_UI/Views/Patient/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Views/Shared/Error.cshtml]
+[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Patient_UI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Patient_UI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Views/_ViewImports.cshtml]
+[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Patient_UI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Views/_ViewStart.cshtml]
+[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Patient_UI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Views/Shared/_Layout.cshtml]
+[G:/New folder (3)/Patient_UI/UI_PatientManagementSystem/Patient_UI/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vecieytndy

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kSYDV+6cs7+yoWwluSuBf3WnD0bB8uic1al7xrCRJtVq0wXewP7K1tVYOcPMApxUNf0h1uBv1Y/kHdqYbp1DdA==",
+  "dgSpecHash": "etw3Ok+KpY/UTVtZhYdexArd0DrHpSxMdv63HthjrOzwUngga25G4Co+yJ9COyqGZaaFmhVTyKfa4zo2qDEBrw==",
   "success": true,
-  "projectFilePath": "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\UI_PatientManagementSystem.csproj",
+  "projectFilePath": "G:\\New folder (3)\\Patient_UI\\UI_PatientManagementSystem\\Patient_UI\\UI_PatientManagementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Syeed\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Syeed\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
