@@ -1,0 +1,224 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+<div class="row">
+    <div class="offset-2 col-9">
+        <div class="card">
+            <div class="card-header">
+                Patient Information
+            </div>
+            <div class="card-body">
+                <form id="meetingMinuteMaster">
+                    <div class="col-12">
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-3">Patient Name<span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input id="name" name="name" class="form-control form-control-sm" placeholder="name" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <label for="Diseases" class="col-sm-3">Diseases Name<span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <select id="Diseases" class="form-control form-control-sm">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <label for="Epilepsy" class="col-sm-3">Epilepsy<span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <select id="Epilepsy" class="form-control form-control-sm">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="from-group row mt-2">
+                            <label class="col-sm-3">Other NCDs</label>
+                            <div class="col-sm-9">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style="width:40%;">
+                                            <select id="lstNCD1" multiple="multiple" style="width:100%;">
+                                            </select>
+                                        </td>
+                                        <td style="width:20%; text-align:center;">
+                                            <input type="button" id="btnNCD1" class="btn btn-primary btn-sm" value=">>" />
+                                            <input type="button" id="btnNCD2" class="btn btn-primary btn-sm" value="<<" />
+                                        </td>
+                                        <td style="width:40%">
+                                            <select id="lstNCD2" multiple="multiple" style="width:100%;">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="from-group row mt-2">
+                            <label class="col-sm-3">Allergies</label>
+                            <div class="col-sm-9">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style="width:40%;">
+                                            <select id="lstAllergies1" multiple="multiple" style="width:100%;">
+                                            </select>
+                                        </td>
+                                        <td style="width:20%; text-align:center;">
+                                            <input type="button" id="btnAllergies1" class="btn btn-primary btn-sm" value=">>" />
+                                            <input type="button" id="btnAllergies2" class="btn btn-primary btn-sm" value="<<" />
+                                        </td>
+                                        <td style="width:40%">
+                                            <select id="lstAllergies2" multiple="multiple" style="width:100%;">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-2">
+                    <button type="button" id="btnSave" class="btn btn-success float-left btn-sm">Save</button>
+                    <button type="button" id="btnRefresh" class="btn btn-light float-left btn-sm">Refresh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+
+    <script>
+        var apiUrl = "http://localhost:37114/api";
+        $(document).ready(function () {
+            $("#Diseases").select2({ width: '100%', placeholder: "select", allowClear: true });
+            $("#Epilepsy").select2({ width: '100%', placeholder: "select", allowClear: true });
+            getDiseases();
+            getEpilepsy();
+            getGetNCD();
+            getAllergies();
+        });
+
+        function getDiseases() {
+            $.ajax({
+                url: apiUrl + "/DropDown/GetDiseaseInformation",
+                dataType: 'json',
+                type: 'get',
+                success: function (res) {
+                    let option = `<option value="">Select..</option>`;
+                    $.each(res, function (key, val) {
+                        option += `<option value="${val.value}">${val.text}</option>`;
+                    });
+                    $("#Diseases").append(option);
+                }
+            });
+        }
+
+        function getEpilepsy() {
+            $.ajax({
+                url: apiUrl + "/DropDown/GetEpilepsy",
+                dataType: 'json',
+                type: 'get',
+                success: function (res) {
+                    let option = `<option value="">Select..</option>`;
+                    $.each(res, function (key, val) {
+                        option += `<option value="${val.value}">${val.text}</option>`;
+                    });
+                    $("#Epilepsy").append(option);
+                }
+            })
+        }
+
+        function getGetNCD() {
+            $.ajax({
+                url: apiUrl + "/DropDown/GetNCD",
+                dataType: 'json',
+                type: 'get',
+                success: function (res) {
+                    let option = ``;
+                    $.each(res, function (key, val) {
+                        option += `<option value="${val.value}">${val.text}</option>`;
+                    });
+                    $("#lstNCD1").append(option);
+                }
+            });
+        }
+        function getAllergies(){
+            $.ajax({
+                url: apiUrl + "/DropDown/GetAllergy",
+                dataType: 'json',
+                type: 'get',
+                success: function (res) {
+                    let option = ``;
+                    $.each(res, function (key, val) {
+                        option += `<option value="${val.value}">${val.text}</option>`;
+                    });
+                    $("#lstAllergies1").append(option);
+                }
+            });
+        }
+        
+        $("#btnNCD1").click(function () {
+            $("#lstNCD1 option:selected").each(function () {
+                $(this).remove().appendTo("#lstNCD2");
+            })
+        });
+
+        $("#btnNCD2").click(function () {
+            $("#lstNCD2 option:selected").each(function () {
+                $(this).remove().appendTo("#lstNCD1");
+            })
+        });
+
+        $("#btnAddNCD").click(function () {
+            var NCDList = ("#Epilepsy li");
+            foreach(NCDList, function (key, val) {
+                console.log(val);
+            });
+        });
+
+        $("#btnAllergies1").click(function () {
+            $("#lstAllergies1 option:selected").each(function () {
+                $(this).remove().appendTo("#lstAllergies2");
+            })
+        });
+
+        $("#btnAllergies2").click(function () {
+            $("#lstAllergies2 option:selected").each(function () {
+                $(this).remove().appendTo("#lstAllergies1");
+            })
+        });
+
+        $(document).on("click", "#btnSave", function () {
+            if($("#meetingMinuteMaster").valid()){
+                let patientInformation = {
+                    name:"",
+                    diseaseId: "",
+                    epilepsy: ""
+                }
+                patientInformation.name = $("#name").val();
+                patientInformation.diseaseId = +$("#Diseases").val();
+                patientInformation.epilepsy = $("#Epilepsy").val();
+
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    url: apiUrl + "/PatientInformation/Create",
+                    dataType: 'json',
+                    data: JSON.stringify(patientInformation),
+                    type: "post",
+                    success: function (res) {
+
+                    }
+                });
+            }
+        });
+
+    </script>
+}
